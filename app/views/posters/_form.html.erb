@@ -1,0 +1,71 @@
+<%= form_with model: @poster, local: true do |form| %>
+
+  <% if @poster.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@poster.errors.count, "error") %> prohibited
+        this poster from being saved:
+      </h2>
+      <ul>
+        <% @poster.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+
+  <p>
+    <%= form.label :description %><br>
+    <%= form.text_area :description %>
+  </p>
+
+  <p>
+    <%= form.label :notes %><br>
+    <%= form.text_area :notes %>
+  </p>
+
+  <p>
+    <%= form.label :width %><br>
+    <%= form.text_field :width %>
+  </p>
+
+  <p>
+    <%= form.label :height %><br>
+    <%= form.text_field :height %>
+  </p>
+
+  <p>
+    <%= form.label :venue %><br>
+    <%= form.text_field :venue %>
+  </p>
+
+  <p>
+    <%= form.label :designer %><br>
+    <%= form.text_field :designer %>
+  </p>
+
+  <p>
+    <%= form.label :printer %><br>
+    <%= form.text_field :printer %>
+  </p>
+
+  <p>
+    <%= form.label :year %><br>
+    <%= form.text_field :year %>
+  </p>
+
+  <!--artist-->
+  <!--series-->
+  <!--signed_by-->
+  <!--picture-->
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+<% end %>
