@@ -64,9 +64,13 @@
     <%= form.text_field :artists %>
   </p>
 
+  <img src="<%= "/uploads/#{@poster.picture}" %>"/>
+  <p>
+    <%= form.label :picture %><br>
+    <%= form.file_field :picture %>
+  </p>
   <!--series-->
   <!--signed_by-->
-  <!--picture-->
 
   <p>
     <%= form.submit %>

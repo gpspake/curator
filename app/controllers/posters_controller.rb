@@ -28,6 +28,8 @@ class PostersController < ApplicationController
     def update
       @poster = Poster.find(params[:id])
 
+      upload if params[:poster][:picture]
+
       if @poster.update(poster_params)
         redirect_to @poster
       else
@@ -42,6 +44,13 @@ class PostersController < ApplicationController
       redirect_to posters_path
     end
 
+    def upload
+      uploaded_io = params[:poster][:picture]
+      File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
+        file.write(uploaded_io.read)
+      end
+    end
+
     private
     def poster_params
       params.require(:poster).permit(
@@ -54,7 +63,8 @@ class PostersController < ApplicationController
         :venue,
         :designer,
         :printer,
-        :year
+        :year,
+        :picture
       )
     end
   end

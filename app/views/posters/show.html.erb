@@ -1,5 +1,9 @@
 <h1>Poster | <%= @poster.name %></h1>
 
+<% if @poster.picture %>
+  <img src="<%= "/uploads/#{@poster.picture}" %>"/>
+<% end %>
+
 <% if @poster.description %>
   <p>
     <strong>Description:</strong>
