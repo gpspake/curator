@@ -6,6 +6,10 @@ module Types
     field :name,        String, null: true
 
     field :description, String, null: true
+    field :artists,     String, null: true
+    # def artists
+    #   JSON.parse object.artists if object.artists
+    # end
     field :year,        String, null: true
     field :width,       Int,    null: true
     field :height,      Int,    null: true

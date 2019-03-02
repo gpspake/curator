@@ -47,6 +47,7 @@ class PostersController < ApplicationController
       params.require(:poster).permit(
         :name,
         :description,
+        :artists,
         :notes,
         :width,
         :height,

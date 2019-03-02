@@ -7,6 +7,15 @@
   </p>
 <% end %>
 
+<% if @poster.artists %>
+  <p>
+    <strong>Artists:</strong>
+    <% @poster.artists.each do |a| %>
+      <%= a %>
+    <% end %>
+  </p>
+<% end %>
+
 <% if @poster.year %>
   <p>
     <strong>Year:</strong>
