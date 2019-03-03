@@ -1,0 +1,79 @@
+<h1>Poster | <%= @poster.name %></h1>
+
+<% if @poster.picture %>
+  <img src="<%= "/uploads/#{@poster.picture}" %>"/>
+<% end %>
+
+<% if @poster.description %>
+  <p>
+    <strong>Description:</strong>
+    <%= @poster.description %>
+  </p>
+<% end %>
+
+<% if @poster.artists %>
+  <p>
+    <strong>Artists:</strong>
+    <% @poster.artists.each do |a| %>
+      <%= a %>
+    <% end %>
+  </p>
+<% end %>
+
+<% if @poster.series %>
+  <p>
+    <strong>Series:</strong>
+    <%= "#{@poster.series[0]} of #{@poster.series[1]}"  %>
+  </p>
+<% end %>
+
+<% if @poster.signed_by %>
+  <p>
+    <strong>Signed By:</strong>
+    <%= @poster.signed_by.to_sentence %>
+  </p>
+<% end %>
+
+<% if @poster.year %>
+  <p>
+    <strong>Year:</strong>
+    <%= @poster.year %>
+  </p>
+<% end %>
+
+<% if @poster.width && @poster.height %>
+  <p>
+    <strong>Dimensions:</strong>
+    <%= "#{@poster.width} x #{@poster.height} inches" %>
+  </p>
+<% end %>
+
+<% if @poster.venue %>
+  <p>
+    <strong>Venue:</strong>
+    <%= @poster.venue %>
+<% end %>
+
+<% if @poster.designer %>
+  <p>
+    <strong>Designer:</strong>
+    <%= @poster.designer %>
+  </p>
+<% end %>
+
+<% if @poster.printer %>
+  <p>
+    <strong>Printer:</strong>
+    <%= @poster.printer %>
+  </p>
+<% end %>
+
+<% if @poster.notes %>
+  <p>
+    <strong>Notes:</strong>
+    <%= @poster.notes %>
+  </p>
+<% end %>
+
+<%= link_to 'Edit', edit_poster_path(@poster) %> |
+<%= link_to 'Back', posters_path %>

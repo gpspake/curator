@@ -1,0 +1,2 @@
+#!/bin/sh -e
+exec docker-compose exec web rails c

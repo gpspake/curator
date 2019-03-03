@@ -9,9 +9,26 @@ module Types
       argument :id, ID, required: true
     end
 
+    field :posters, [PosterType], null: true do
+      description "Find all posters"
+    end
+
+    field :poster, PosterType, null: true do
+      description "Find a poster by ID"
+      argument :id, ID, required: true
+    end
+
     # Then provide an implementation:
     def article(id:)
       Article.find(id)
+    end
+
+    def poster(id:)
+      Poster.find(id)
+    end
+
+    def posters
+      Poster.all
     end
   end
 end
