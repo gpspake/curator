@@ -64,13 +64,21 @@
     <%= form.text_field :artists %>
   </p>
 
+  <p>
+    <%= form.label :series %><br>
+    <%= form.text_field :series %>
+  </p>
+
+  <p>
+    <%= form.label :signed_by %><br>
+    <%= form.text_field :signed_by %>
+  </p>
+
   <img src="<%= "/uploads/#{@poster.picture}" %>"/>
   <p>
     <%= form.label :picture %><br>
     <%= form.file_field :picture %>
   </p>
-  <!--series-->
-  <!--signed_by-->
 
   <p>
     <%= form.submit %>

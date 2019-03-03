@@ -20,6 +20,20 @@
   </p>
 <% end %>
 
+<% if @poster.series %>
+  <p>
+    <strong>Series:</strong>
+    <%= "#{@poster.series[0]} of #{@poster.series[1]}"  %>
+  </p>
+<% end %>
+
+<% if @poster.signed_by %>
+  <p>
+    <strong>Signed By:</strong>
+    <%= @poster.signed_by.to_sentence %>
+  </p>
+<% end %>
+
 <% if @poster.year %>
   <p>
     <strong>Year:</strong>

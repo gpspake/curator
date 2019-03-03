@@ -4,12 +4,8 @@ module Types
     description   "A poster"
 
     field :name,        String, null: true
-
     field :description, String, null: true
     field :artists,     String, null: true
-    # def artists
-    #   JSON.parse object.artists if object.artists
-    # end
     field :year,        String, null: true
     field :width,       Int,    null: true
     field :height,      Int,    null: true
@@ -17,5 +13,7 @@ module Types
     field :designer,    String, null: true
     field :printer,     String, null: true
     field :notes,       String, null: true
+    field :series,      String, null: true
+    field :signed_by,   String, null: true
   end
 end

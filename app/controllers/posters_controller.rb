@@ -64,6 +64,8 @@ class PostersController < ApplicationController
         :designer,
         :printer,
         :year,
+        :signed_by,
+        :series,
         :picture
       )
     end
