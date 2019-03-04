@@ -1,5 +1,6 @@
 class Poster < ApplicationRecord
   nilify_blanks
+  has_one_attached :picture
 
   def store_array(attr, val)
     write_attribute(attr, val.split(','))
@@ -15,9 +16,5 @@ class Poster < ApplicationRecord
 
   def signed_by=(val)
     store_array(:signed_by, val)
-  end
-
-  def picture=(val)
-    write_attribute(:picture, val.original_filename)
   end
 end
