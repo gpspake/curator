@@ -67,3 +67,5 @@ gem 'graphiql-rails', group: :development
 gem "nilify_blanks"
 
 gem 'devise'
+
+gem 'mini_magick'
