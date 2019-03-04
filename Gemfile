@@ -65,3 +65,5 @@ gem 'graphql'
 gem 'graphiql-rails', group: :development
 
 gem "nilify_blanks"
+
+gem 'devise'
