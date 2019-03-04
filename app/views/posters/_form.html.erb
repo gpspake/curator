@@ -74,11 +74,11 @@
     <%= form.text_field :signed_by %>
   </p>
 
-  <img src="<%= "/uploads/#{@poster.picture}" %>"/>
-  <p>
-    <%= form.label :picture %><br>
-    <%= form.file_field :picture %>
-  </p>
+  <% if @poster.picture.attached? %>
+    <%= image_tag @poster.picture.variant(resize: "200x200") %>
+  <% end %>
+
+  <%= form.file_field :picture %>
 
   <p>
     <%= form.submit %>

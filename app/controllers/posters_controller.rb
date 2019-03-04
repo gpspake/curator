@@ -31,8 +31,6 @@ class PostersController < ApplicationController
   def update
     @poster = Poster.find(params[:id])
 
-    upload if params[:poster][:picture]
-
     if @poster.update(poster_params)
       redirect_to @poster
     else
@@ -45,13 +43,6 @@ class PostersController < ApplicationController
     @poster.destroy
 
     redirect_to posters_path
-  end
-
-  def upload
-    uploaded_io = params[:poster][:picture]
-    File.open(Rails.root.join('public', 'uploads', uploaded_io.original_filename), 'wb') do |file|
-      file.write(uploaded_io.read)
-    end
   end
 
   private

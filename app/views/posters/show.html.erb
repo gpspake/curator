@@ -1,7 +1,7 @@
 <h1>Poster | <%= @poster.name %></h1>
 
-<% if @poster.picture %>
-  <img src="<%= "/uploads/#{@poster.picture}" %>"/>
+<% if @poster.picture.attached? %>
+  <%= image_tag @poster.picture.variant(resize: "200x200") %>
 <% end %>
 
 <% if @poster.description %>
