@@ -1,5 +1,9 @@
 <h1>Posters</h1>
-<%= link_to 'New poster', new_poster_path %>
+
+<% if current_user && current_user.admin %>
+  <%= link_to 'New poster', new_poster_path %>
+<% end %>
+
 <table>
   <tr>
     <th>Name</th>
@@ -10,10 +14,14 @@
     <tr>
       <td><%= poster.name %></td>
       <td><%= link_to 'Show', poster_path(poster) %></td>
-      <td><%= link_to 'Edit', edit_poster_path(poster) %></td>
-      <td><%= link_to 'Destroy', poster_path(poster),
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' } %></td>
+
+      <% if current_user && current_user.admin %>
+        <td><%= link_to 'Edit', edit_poster_path(poster) %></td>
+        <td><%= link_to 'Destroy', poster_path(poster),
+                        method: :delete,
+                        data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
+
     </tr>
   <% end %>
 </table>
